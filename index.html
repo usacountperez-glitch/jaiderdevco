@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAIDER.DEVCO | Diseño Web Profesional</title>
+
+<style>
+
+/* ================= MATRIX BACKGROUND ================= */
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:black;
+    color:white;
+    overflow-x:hidden;
+}
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h1{
+    color:red;
+    letter-spacing:3px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:red;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+.hero h2{
+    font-size:60px;
+    color:red;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:850px;
+    font-size:22px;
+    line-height:1.6;
+    opacity:0.9;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:120px 8%;
+    background:rgba(0,0,0,0.9);
+}
+
+section h2{
+    text-align:center;
+    color:red;
+    margin-bottom:60px;
+    font-size:45px;
+}
+
+/* ================= SERVICIOS ================= */
+
+.servicios-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:#111;
+    padding:35px;
+    border-radius:12px;
+    border:1px solid #222;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border:1px solid red;
+}
+
+.card h3{
+    color:red;
+}
+
+/* ================= EJEMPLOS ================= */
+
+.ejemplos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.ejemplo{
+    background:#111;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.ejemplo:hover{
+    transform:scale(1.03);
+}
+
+.ejemplo img{
+    width:100%;
+    display:block;
+}
+
+.ejemplo h4{
+    padding:15px;
+    color:red;
+    text-align:center;
+}
+
+/* ================= PLANES ================= */
+
+.planes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.plan{
+    background:#111;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.plan:hover{
+    transform:translateY(-10px);
+}
+
+.plan.basico{ border:2px solid silver; }
+.plan.pro{ border:2px solid gold; }
+.plan.premium{ border:2px solid red; }
+
+.plan h3{
+    margin-bottom:15px;
+}
+
+.plan ul{
+    list-style:none;
+    padding:0;
+    line-height:1.8;
+}
+
+/* ================= CONTACTO LATERAL ================= */
+
+.contacto-lateral{
+    position:fixed;
+    right:0;
+    top:40%;
+    background:rgba(255,0,0,0.9);
+    padding:25px;
+    border-radius:15px 0 0 15px;
+    font-size:14px;
+    box-shadow:0 0 15px red;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:80px 20px;
+    border-top:2px solid red;
+}
+
+.sellos{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+<h1>JAIDER.DEVCO</h1>
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#ejemplos">Ejemplos</a></li>
+<li><a href="#planes">Planes</a></li>
+</ul>
+</nav>
+
+<div class="hero" id="inicio">
+<h2>Diseño Web Profesional en NY & NJ</h2>
+<p>
+Creamos páginas web modernas, rápidas y estratégicamente diseñadas para convertir visitantes en clientes.
+Trabajamos con negocios en New York, New Jersey y alrededores.
+Tu marca no solo necesita una página web… necesita presencia digital, autoridad y resultados.
+</p>
+</div>
+
+<section id="servicios">
+<h2>Servicios para Empresas y Marcas</h2>
+<div class="servicios-grid">
+
+<div class="card">
+<h3>💼 Página Corporativa</h3>
+<p>Diseño profesional para empresas que buscan credibilidad y autoridad digital en NY y NJ.</p>
+</div>
+
+<div class="card">
+<h3>🛒 Tienda Online</h3>
+<p>E-commerce optimizado para vender 24/7 con diseño atractivo y experiencia de usuario moderna.</p>
+</div>
+
+<div class="card">
+<h3>🏗 Arquitectura & Lujo</h3>
+<p>Webs visuales premium para constructoras, bienes raíces y proyectos de alto nivel.</p>
+</div>
+
+<div class="card">
+<h3>👤 Marca Personal</h3>
+<p>Impulsa tu imagen profesional con diseño moderno y posicionamiento estratégico.</p>
+</div>
+
+</div>
+</section>
+
+<section id="ejemplos">
+<h2>Ejemplos de Diseños</h2>
+
+<div class="ejemplos-grid">
+
+<div class="ejemplo">
+<img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d">
+<h4>Página Corporativa</h4>
+</div>
+
+<div class="ejemplo">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<h4>Tienda Online</h4>
+</div>
+
+<div class="ejemplo">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<h4>Arquitectura / Lujo</h4>
+</div>
+
+<div class="ejemplo">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<h4>Marca Personal</h4>
+</div>
+
+<div class="ejemplo">
+<img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58">
+<h4>Producto / Tecnología</h4>
+</div>
+
+<div class="ejemplo">
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
+<h4>Tienda de Moda</h4>
+</div>
+
+</div>
+</section>
+
+<section id="planes">
+<h2>Planes Disponibles</h2>
+
+<div class="planes">
+
+<div class="plan basico">
+<h3>🥈 PLAN BÁSICO - $99</h3>
+<ul>
+<li>1 página simple</li>
+<li>Diseño moderno</li>
+<li>Adaptable móvil</li>
+<li>Botón WhatsApp</li>
+<li>Entrega 3-5 días</li>
+</ul>
+</div>
+
+<div class="plan pro">
+<h3>🥇 PLAN PRO - $199</h3>
+<ul>
+<li>Hasta 5 secciones</li>
+<li>Galería de imágenes</li>
+<li>Formulario de contacto</li>
+<li>SEO básico</li>
+<li>Entrega 5-7 días</li>
+</ul>
+</div>
+
+<div class="plan premium">
+<h3>💎 PLAN PREMIUM - $349</h3>
+<ul>
+<li>Diseño totalmente personalizado</li>
+<li>Animaciones modernas</li>
+<li>Integración redes sociales</li>
+<li>Dominio personalizado</li>
+<li>Soporte 30 días</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<div class="contacto-lateral">
+📞 929-780-0722<br><br>
+📧 usacountperez@gmail.com<br><br>
+📸 @elruso.perez
+</div>
+
+<footer>
+<p>© 2026 JAIDER.DEVCO | Diseño Web Profesional</p>
+
+<div class="sellos">
+<span>✔ Diseño Certificado</span>
+<span>✔ Seguridad Web SSL</span>
+<span>✔ Soporte Profesional</span>
+<span>✔ Optimización SEO</span>
+</div>
+
+</footer>
+
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "01";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+for(let x = 0; x < columns; x++)
+    drops[x] = 1;
+
+function draw(){
+    ctx.fillStyle = "rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "#0F0";
+    ctx.font = fontSize + "px monospace";
+
+    for(let i=0;i<drops.length;i++){
+        const text = letters[Math.floor(Math.random()*letters.length)];
+        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+            drops[i]=0;
+        drops[i]++;
+    }
+}
+setInterval(draw,35);
+</script>
+
+</body>
+</html>
