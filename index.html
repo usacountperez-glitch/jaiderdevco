@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAIDER.DEVCO | Diseño Web Profesional</title>
+
+<style>
+
+/* ===== GENERAL ===== */
+
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:black;
+    color:white;
+    overflow-x:hidden;
+}
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+    position:sticky;
+    top:0;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.9);
+    z-index:1000;
+}
+
+nav h1{
+    color:red;
+    letter-spacing:3px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:red;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h2{
+    font-size:45px;
+    color:red;
+    max-width:900px;
+}
+
+.hero p{
+    max-width:850px;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+    padding:100px 8%;
+    background:rgba(0,0,0,0.92);
+}
+
+section h2{
+    text-align:center;
+    color:red;
+    margin-bottom:50px;
+    font-size:36px;
+}
+
+/* ===== CARDS ===== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#111;
+    padding:30px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border:1px solid red;
+}
+
+/* ===== EJEMPLOS ===== */
+
+.ejemplo img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* ===== PLANES ===== */
+
+.plan{
+    background:#111;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    position:relative;
+}
+
+.plan.basico{ border:2px solid silver; }
+.plan.pro{ border:2px solid gold; }
+.plan.premium{ border:2px solid red; box-shadow:0 0 20px red; }
+
+.plan h3{
+    margin-bottom:10px;
+}
+
+.plan ul{
+    list-style:none;
+    padding:0;
+    line-height:1.8;
+}
+
+.popular{
+    position:absolute;
+    top:-15px;
+    right:-15px;
+    background:gold;
+    color:black;
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:red;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.btn:hover{
+    background:darkred;
+}
+
+/* ===== TABLA ===== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:50px;
+}
+
+th, td{
+    border:1px solid #333;
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#111;
+    color:red;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    text-align:center;
+    padding:70px 20px;
+    border-top:2px solid red;
+}
+
+.sellos{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    section{
+        padding:70px 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+<h1>JAIDER.DEVCO</h1>
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#planes">Planes</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+
+<div class="hero" id="inicio">
+<h2>Diseño Web Profesional en NY & NJ</h2>
+<p>
+Creamos páginas web estratégicas para convertir visitantes en clientes.
+Especializados en negocios en New York, New Jersey y alrededores.
+No es solo una página web… es tu presencia digital profesional.
+</p>
+</div>
+
+<section id="planes">
+<h2>Planes Profesionales</h2>
+
+<div class="grid">
+
+<div class="plan basico">
+<h3>🥈 PLAN BÁSICO - $99</h3>
+<ul>
+<li>1 Página Simple</li>
+<li>Diseño Moderno</li>
+<li>Adaptable a Celular</li>
+<li>Botón WhatsApp</li>
+<li>Entrega 3-5 días</li>
+</ul>
+<a href="https://wa.me/19297800722" class="btn">Cotizar Ahora</a>
+</div>
+
+<div class="plan pro">
+<div class="popular">MÁS POPULAR</div>
+<h3>🥇 PLAN PRO - $199</h3>
+<ul>
+<li>Hasta 5 Secciones</li>
+<li>Galería Profesional</li>
+<li>Formulario Contacto</li>
+<li>SEO Básico</li>
+<li>Redes Sociales</li>
+<li>Entrega 5-7 días</li>
+</ul>
+<a href="https://wa.me/19297800722" class="btn">Cotizar Ahora</a>
+</div>
+
+<div class="plan premium">
+<h3>💎 PLAN PREMIUM - $349</h3>
+<ul>
+<li>Diseño Personalizado</li>
+<li>Animaciones Modernas</li>
+<li>Optimización Avanzada</li>
+<li>Dominio Incluido</li>
+<li>Soporte 30 días</li>
+</ul>
+<a href="https://wa.me/19297800722" class="btn">Cotizar Ahora</a>
+</div>
+
+</div>
+
+<h2>Comparación de Planes</h2>
+
+<table>
+<tr>
+<th>Características</th>
+<th>Básico</th>
+<th>Pro</th>
+<th>Premium</th>
+</tr>
+<tr>
+<td>Diseño Personalizado</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔✔</td>
+</tr>
+<tr>
+<td>SEO</td>
+<td>Básico</td>
+<td>Intermedio</td>
+<td>Avanzado</td>
+</tr>
+<tr>
+<td>Soporte</td>
+<td>Limitado</td>
+<td>Inicial</td>
+<td>30 Días</td>
+</tr>
+</table>
+
+</section>
+
+<footer id="contacto">
+<h3>Contacto</h3>
+<p>📞 929-780-0722</p>
+<p>📧 usacountperez@gmail.com</p>
+<p>📸 @elruso.perez</p>
+
+<div class="sellos">
+<span>✔ Diseño Certificado</span>
+<span>✔ Seguridad SSL</span>
+<span>✔ Soporte Profesional</span>
+</div>
+
+<p style="margin-top:30px;">© 2026 JAIDER.DEVCO</p>
+</footer>
+
+<script>
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
+const letters="01";
+const fontSize=14;
+const columns=canvas.width/fontSize;
+const drops=[];
+for(let x=0;x<columns;x++) drops[x]=1;
+function draw(){
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="#0F0";
+ctx.font=fontSize+"px monospace";
+for(let i=0;i<drops.length;i++){
+const text=letters[Math.floor(Math.random()*letters.length)];
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+if(drops[i]*fontSize>canvas.height&&Math.random()>0.975) drops[i]=0;
+drops[i]++;
+}}
+setInterval(draw,35);
+</script>
+
+</body>
+</html>
